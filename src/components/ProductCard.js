@@ -91,7 +91,7 @@ export default function ProductCard({ product, onAddToCart, showAddToCart = true
               href={product.moreInfoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={onYoungevityClick}
+              onClick={(e) => onYoungevityClick && onYoungevityClick(e, product.moreInfoUrl)}
               className="w-full bg-forest-green/10 hover:bg-forest-green/20 text-forest-green font-semibold py-2 px-6 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm"
             >
               <Info size={16} />

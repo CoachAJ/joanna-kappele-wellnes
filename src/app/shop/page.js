@@ -10,9 +10,17 @@ import { FEATURED_PRODUCTS, NINETY_FOR_LIFE_PRODUCTS, SPONSOR_ID } from '@/lib/p
 export default function ShopPage() {
   const [cartItems, setCartItems] = useState([])
   const [showProTip, setShowProTip] = useState(false)
+  const [pendingRedirectUrl, setPendingRedirectUrl] = useState(null)
 
-  const handleYoungevityClick = () => {
+  const handleYoungevityClick = (e, url) => {
+    e.preventDefault()
+    setPendingRedirectUrl(url)
     setShowProTip(true)
+  }
+
+  const handleProTipClose = () => {
+    setShowProTip(false)
+    setPendingRedirectUrl(null)
   }
 
   const addToCart = (product) => {
@@ -64,7 +72,7 @@ export default function ShopPage() {
                 href="https://adoreyourself.youngevity.com/us_en/"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleYoungevityClick}
+                onClick={(e) => handleYoungevityClick(e, 'https://adoreyourself.youngevity.com/us_en/')}
                 className="inline-flex items-center gap-2 bg-vitality-orange hover:bg-vitality-red text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-md"
               >
                 <ShoppingBag size={20} />
@@ -287,7 +295,11 @@ export default function ShopPage() {
       />
 
       {/* Pro Tip Toast */}
-      <ProTipToast show={showProTip} onClose={() => setShowProTip(false)} />
+      <ProTipToast 
+        show={showProTip} 
+        onClose={handleProTipClose} 
+        redirectUrl={pendingRedirectUrl} 
+      />
     </>
   )
 }
