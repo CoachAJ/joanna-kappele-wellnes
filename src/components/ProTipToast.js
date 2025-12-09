@@ -24,7 +24,7 @@ export default function ProTipToast({ show, onClose, redirectUrl }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 animate-fade-in">
-      <div className="bg-forest-green text-white rounded-xl shadow-2xl p-6 max-w-md mx-4 flex items-start gap-4">
+      <div className="bg-forest-green text-white rounded-2xl shadow-2xl p-6 max-w-md mx-4 flex items-start gap-4 border-4 border-vitality-yellow/80 ring-4 ring-white/20">
         <Lightbulb className="text-vitality-yellow flex-shrink-0 mt-0.5" size={28} />
         <div className="flex-1">
           <p className="font-bold text-xl mb-2">Pro Tip!</p>
