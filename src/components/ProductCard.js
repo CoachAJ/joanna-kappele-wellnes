@@ -1,10 +1,10 @@
 'use client'
 
-import { ShoppingCart, Plus, Check } from 'lucide-react'
+import { ShoppingCart, Plus, Check, Info } from 'lucide-react'
 import { useState } from 'react'
 import { createCheckoutUrl } from '@/lib/products'
 
-export default function ProductCard({ product, onAddToCart, showAddToCart = true }) {
+export default function ProductCard({ product, onAddToCart, showAddToCart = true, onYoungevityClick }) {
   const [added, setAdded] = useState(false)
 
   const handleBuyNow = () => {
@@ -83,6 +83,20 @@ export default function ProductCard({ product, onAddToCart, showAddToCart = true
                 </>
               )}
             </button>
+          )}
+          
+          {/* More Information Button */}
+          {product.moreInfoUrl && (
+            <a
+              href={product.moreInfoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onYoungevityClick}
+              className="w-full bg-forest-green/10 hover:bg-forest-green/20 text-forest-green font-semibold py-2 px-6 rounded-xl transition-colors flex items-center justify-center gap-2 text-sm"
+            >
+              <Info size={16} />
+              More Information
+            </a>
           )}
         </div>
       </div>

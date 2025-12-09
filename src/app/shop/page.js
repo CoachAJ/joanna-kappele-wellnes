@@ -4,10 +4,16 @@ import { useState } from 'react'
 import { ShoppingBag, ArrowRight, Shield, Truck, Award, Play, Phone } from 'lucide-react'
 import ProductCard from '@/components/ProductCard'
 import FloatingCart from '@/components/FloatingCart'
+import ProTipToast from '@/components/ProTipToast'
 import { FEATURED_PRODUCTS, NINETY_FOR_LIFE_PRODUCTS, SPONSOR_ID } from '@/lib/products'
 
 export default function ShopPage() {
   const [cartItems, setCartItems] = useState([])
+  const [showProTip, setShowProTip] = useState(false)
+
+  const handleYoungevityClick = () => {
+    setShowProTip(true)
+  }
 
   const addToCart = (product) => {
     setCartItems(prev => {
@@ -51,6 +57,20 @@ export default function ShopPage() {
             <div className="bg-white/10 rounded-xl p-4 inline-block">
               <p className="text-white/80 text-sm">Shopping with Joanna&apos;s Distributor ID:</p>
               <p className="text-2xl font-heading font-bold text-vitality-yellow">{SPONSOR_ID}</p>
+            </div>
+            
+            <div className="mt-6">
+              <a
+                href="https://adoreyourself.youngevity.com/us_en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleYoungevityClick}
+                className="inline-flex items-center gap-2 bg-vitality-orange hover:bg-vitality-red text-white font-bold py-3 px-6 rounded-xl transition-colors shadow-md"
+              >
+                <ShoppingBag size={20} />
+                Shop Our Full Product Line
+                <ArrowRight size={18} />
+              </a>
             </div>
           </div>
         </div>
@@ -103,6 +123,7 @@ export default function ShopPage() {
                 key={product.id} 
                 product={product} 
                 onAddToCart={addToCart}
+                onYoungevityClick={handleYoungevityClick}
               />
             ))}
           </div>
@@ -178,6 +199,7 @@ export default function ShopPage() {
                   key={product.id} 
                   product={product} 
                   onAddToCart={addToCart}
+                  onYoungevityClick={handleYoungevityClick}
                 />
               ))}
             </div>
@@ -263,6 +285,9 @@ export default function ShopPage() {
         onRemove={removeFromCart}
         onClear={clearCart}
       />
+
+      {/* Pro Tip Toast */}
+      <ProTipToast show={showProTip} onClose={() => setShowProTip(false)} />
     </>
   )
 }

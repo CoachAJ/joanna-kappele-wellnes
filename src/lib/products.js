@@ -51,7 +51,8 @@ export const FEATURED_PRODUCTS = [
     subtitle: '31 Day Supply - Canister',
     price: 51.95,
     image: '/images/I-26 hyperimmune.png',
-    description: 'Supports immune system health with hyperimmune egg protein.'
+    description: 'Supports immune system health with hyperimmune egg protein.',
+    moreInfoUrl: 'https://adoreyourself.youngevity.com/us_en/i26-hyperimmune-egg-powder-31-day-supply-canister.html'
   },
   {
     id: 'USYG100074',
@@ -59,7 +60,8 @@ export const FEATURED_PRODUCTS = [
     subtitle: 'Multi-vitamin Mineral Complex',
     price: 69.95,
     image: '/images/Tangy Tangerine 2.5.png',
-    description: 'Our most advanced multi-vitamin mineral complex with synergizing cofactors.'
+    description: 'Our most advanced multi-vitamin mineral complex with synergizing cofactors.',
+    moreInfoUrl: 'https://adoreyourself.youngevity.com/us_en/2point5.html?sku=USYG100074'
   },
   {
     id: '65002',
@@ -67,7 +69,8 @@ export const FEATURED_PRODUCTS = [
     subtitle: '62 Capsules',
     price: 76.95,
     image: '/images/nightly essence.png',
-    description: 'Supports restful sleep and nighttime cellular regeneration.'
+    description: 'Supports restful sleep and nighttime cellular regeneration.',
+    moreInfoUrl: 'https://adoreyourself.youngevity.com/us_en/ultimate-nightly-essense-62-capsules.html'
   },
   {
     id: 'USYG300007',
@@ -75,7 +78,8 @@ export const FEATURED_PRODUCTS = [
     subtitle: 'Hair, Skin & Nail Support',
     price: 63.95,
     image: '/images/Collagen Hair Skin Nails.png',
-    description: 'Premium collagen peptides for healthy hair, skin, and nails.'
+    description: 'Premium collagen peptides for healthy hair, skin, and nails.',
+    moreInfoUrl: 'https://adoreyourself.youngevity.com/us_en/collagen-peptides-hair-skin-nail-support.html'
   },
   {
     id: 'USYG400401',
@@ -83,7 +87,8 @@ export const FEATURED_PRODUCTS = [
     subtitle: 'Liquid Minerals',
     price: 44.95,
     image: '/images/Mineral stix.png',
-    description: 'Plant-derived colloidal minerals in convenient stick packs.'
+    description: 'Plant-derived colloidal minerals in convenient stick packs.',
+    moreInfoUrl: 'https://adoreyourself.youngevity.com/us_en/majestic-earth-mineral-stx.html'
   }
 ]
 
